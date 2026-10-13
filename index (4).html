@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norman Cowie Pottery | Handmade stoneware</title>
+  <meta name="description" content="Wheel-thrown bowls, mugs, jars and vases, handmade by potter and video artist Norman Cowie.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M38 12h24q-2 14 10 26 22 22 8 46-6 6-30 6t-30-6q-14-24 8-46 12-12 10-26z' fill='%237FA796'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#top" class="wordmark">Norman Cowie</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO: interactive pottery wheel -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Norman Cowie throws pots.</h1>
+        <p class="lede">Wheel-thrown stoneware for the kitchen and the table. Every bowl, mug and jar is shaped, trimmed and glazed by hand, then fired hot enough to last a lifetime.</p>
+        <a class="button" href="#work">See the work</a>
+      </div>
+
+      <div class="wheel-wrap">
+        <canvas id="wheel" role="img" aria-label="A lump of clay spinning on a pottery wheel. Drag across it to shape the pot."></canvas>
+        <div class="wheel-controls">
+          <p class="wheel-hint">Drag the spinning clay to shape it, or start from:</p>
+          <div class="wheel-buttons">
+            <button type="button" data-shape="vase">Vase</button>
+            <button type="button" data-shape="bowl">Bowl</button>
+            <button type="button" data-shape="moon">Moon jar</button>
+            <button type="button" data-shape="lump">Squash it</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="work" class="work">
+      <div class="section-head">
+        <h2>Out of the kiln</h2>
+        <p>Recent pieces from the studio. Most are one of a kind, so if something catches your eye, ask about it.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter by glaze">
+        <button type="button" class="is-active" aria-pressed="true" data-filter="all">All glazes</button>
+        <button type="button" aria-pressed="false" data-filter="celadon"><span class="swatch" style="--c:#7FA796"></span>Celadon</button>
+        <button type="button" aria-pressed="false" data-filter="tenmoku"><span class="swatch" style="--c:#3A2418"></span>Tenmoku</button>
+        <button type="button" aria-pressed="false" data-filter="shino"><span class="swatch" style="--c:#D08A55"></span>Shino</button>
+        <button type="button" aria-pressed="false" data-filter="ash"><span class="swatch" style="--c:#A9A47E"></span>Wood ash</button>
+      </div>
+
+      <!--
+        Each pot is drawn automatically from its data-shape and data-glaze.
+        TO USE A REAL PHOTO: put it in the "images" folder and replace the empty
+        <div class="pot-art"></div> with:
+          <div class="pot-art"><img src="images/your-photo.jpg" alt="Describe the pot"></div>
+        Shapes available: bottle, mug, moon, bowl, jar, cup
+        Glazes available: celadon, tenmoku, shino, ash
+      -->
+      <ul class="gallery">
+        <li class="piece" data-glaze="celadon" data-shape="bottle">
+          <div class="pot-art"></div>
+          <h3>Celadon bottle vase</h3>
+          <p>About 30 cm tall. The glaze pools darker in the throwing lines.</p>
+        </li>
+        <li class="piece" data-glaze="tenmoku" data-shape="mug">
+          <div class="pot-art"></div>
+          <h3>Tenmoku mugs</h3>
+          <p>Holds a generous cup. Sold singly or in sets of four.</p>
+        </li>
+        <li class="piece" data-glaze="shino" data-shape="moon">
+          <div class="pot-art"></div>
+          <h3>Shino moon jar</h3>
+          <p>Thrown in two halves and joined. Orange where the glaze is thin, white where it's thick.</p>
+        </li>
+        <li class="piece" data-glaze="ash" data-shape="bowl">
+          <div class="pot-art"></div>
+          <h3>Ash-glaze serving bowl</h3>
+          <p>Wide and generous, made for salads and fruit.</p>
+        </li>
+        <li class="piece" data-glaze="shino" data-shape="jar">
+          <div class="pot-art"></div>
+          <h3>Lidded kitchen jar</h3>
+          <p>For sugar, salt or tea. The lid is fitted to its own jar.</p>
+        </li>
+        <li class="piece" data-glaze="celadon" data-shape="cup">
+          <div class="pot-art"></div>
+          <h3>Tea bowls</h3>
+          <p>Small, round and good to hold in two hands.</p>
+        </li>
+        <li class="piece" data-glaze="tenmoku" data-shape="bowl">
+          <div class="pot-art"></div>
+          <h3>Noodle bowls</h3>
+          <p>Deep enough for soup. Made in batches of six.</p>
+        </li>
+        <li class="piece" data-glaze="ash" data-shape="bottle">
+          <div class="pot-art"></div>
+          <h3>Bud vase</h3>
+          <p>A single stem, a narrow neck, and a glaze that runs.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROCESS: kiln heats up on scroll -->
+    <section id="process" class="kiln">
+      <div class="kiln-inner">
+        <div class="kiln-intro">
+          <h2>From lump to kiln</h2>
+          <p>Every pot goes through the same six stages, and two trips through the fire. Scroll down to fire one.</p>
+        </div>
+
+        <div class="kiln-body">
+          <ol class="steps">
+            <li class="step" data-temp="20">
+              <h3>Wedging</h3>
+              <p>The clay is kneaded on the bench to push out air bubbles that would crack in the kiln.</p>
+            </li>
+            <li class="step" data-temp="20">
+              <h3>Throwing</h3>
+              <p>A lump is centred on the spinning wheel, opened up, and pulled into shape between Norman's hands.</p>
+            </li>
+            <li class="step" data-temp="20">
+              <h3>Trimming</h3>
+              <p>Once it's leather-hard, the pot goes back on the wheel upside down and a foot is carved into the base.</p>
+            </li>
+            <li class="step" data-temp="1000">
+              <h3>Bisque firing</h3>
+              <p>A first firing to about 1000°C turns soft clay into hard, porous ceramic that can take glaze.</p>
+            </li>
+            <li class="step" data-temp="20">
+              <h3>Glazing</h3>
+              <p>Each piece is dipped or poured with glaze, much of it mixed by Norman from raw materials.</p>
+            </li>
+            <li class="step" data-temp="1280">
+              <h3>Glaze firing</h3>
+              <p>The final firing to around 1280°C melts the glaze into glass and makes the pot strong, watertight and food safe.</p>
+            </li>
+          </ol>
+
+          <div class="thermo" aria-hidden="true">
+            <div class="thermo-tube"><div class="thermo-fill"></div></div>
+            <p class="thermo-read"><span id="temp">20</span>°C</p>
+            <p class="thermo-label" id="tempLabel">Room temperature</p>
+          </div>
+        </div>
+      </div>
+
+      <svg class="drip" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0H1200V28C1180 28 1172 34 1166 50C1160 70 1148 70 1144 52C1140 34 1120 30 1060 32C1000 34 990 36 984 60C978 84 962 84 958 62C954 40 930 34 860 34C800 34 780 30 772 42C766 52 756 52 752 40C746 28 700 30 640 30C590 30 578 36 572 66C566 90 548 90 546 66C544 40 520 32 460 32C400 32 380 30 372 46C366 58 354 58 350 44C344 30 300 28 240 30C180 32 170 36 164 56C158 76 142 76 140 56C138 36 100 30 40 30C20 30 6 30 0 30Z"/>
+      </svg>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="about-photo">
+        <!-- Replace with: <img src="images/norman.jpg" alt="Norman at his wheel"> -->
+        <div class="photo-placeholder">Photo of Norman<br>at the wheel</div>
+      </div>
+      <div class="about-text">
+        <h2>About Norman</h2>
+        <p>Norman Cowie works in two very different mediums: video and clay.</p>
+        <p>As a video artist, he has spent decades making documentaries and experimental videos that look at power and at how television and the news shape what we come to believe. His work includes <em>Nazareth in August</em> (1986), <em>Lying in State</em> (1989), <em>About Face</em> (1991), <em>Signal to Noise: Life with Television</em> (1996, co-directed) and <em>Welcome to New York</em> (2002). It often borrows straight from broadcast footage, cut together with sound and text.</p>
+        <p>At the wheel, the work is quieter. [Add when and how Norman started potting, and where his studio is.] He makes functional stoneware, things you'll actually use at the table and in the kitchen, fired hot so every piece is strong and built to last.</p>
+        <p class="about-links">More on his video work: <a href="https://en.wikipedia.org/wiki/Norman_Cowie">Wikipedia</a> &nbsp;|&nbsp; <a href="https://www.imdb.com/name/nm1197954/">IMDb</a> &nbsp;|&nbsp; <a href="http://www.vdb.org/smackn.acgi$artistdetail?COWIEN">Video Data Bank</a></p>
+      </div>
+    </section>
+
+    <!-- BUYING -->
+    <section id="buy" class="buy">
+      <h2>Getting a pot home</h2>
+      <div class="buy-grid">
+        <div>
+          <h3>From the studio</h3>
+          <p>Get in touch to ask what's on the shelves. Norman will send photos and prices.</p>
+        </div>
+        <div>
+          <h3>At the market</h3>
+          <p>Find Norman at [market name] on [day / how often] and pick things up in person.</p>
+        </div>
+        <div>
+          <h3>Made to order</h3>
+          <p>A dinner set, a gift, a particular glaze. Norman takes a limited number of custom orders each year.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Get in touch</h2>
+      <p>Questions, orders, or just to say hello.</p>
+      <!-- Change the email address in BOTH places on the next line -->
+      <a class="contact-email" href="mailto:norman@example.com">norman@example.com</a>
+      <p class="contact-extra">[Town / area] &nbsp;|&nbsp; <a href="https://instagram.com/">Instagram</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Norman Cowie. Every piece made by hand.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
